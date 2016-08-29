@@ -1,0 +1,65 @@
+
+<div class="layout cooking-time">
+
+	<div class="layout__item layout__item--1-4">
+		<div class="cooking-time__action">
+			<div class="icon icon-bird">
+				{% include icons/bird.svg %}
+				{% include icons/tray.svg %}
+			</div>
+			<div class="cooking-time__action__description">
+				<input id="js-bird-weight" type="number" name="bird-weight" value="4" min="0.0" max="999">
+				<span>Kg.</span>
+				<p>Select the size of your Turkey.</p>
+			</div>
+		</div>
+		<span class="cooking-time__operator">+</span>
+	</div>
+
+	<div class="layout__item layout__item--1-4">
+		<div class="cooking-time__action">
+			<span>icon</span>
+			<div class="cooking-time__action__description">
+				<p>Set the oven to 180 degrees, thats gas mark 5. Don't forget to pre-heat it!</p>
+			</div>
+		</div>
+		<span class="cooking-time__operator">+</span>
+	</div>
+
+	<div class="layout__item layout__item--1-4">
+		<div class="cooking-time__action">
+			<div class="icon icon-clock">
+				<span>03:14</span>
+			</div>
+			<div class="cooking-time__action__description">
+				<p>Cook.</p>
+			</div>
+
+		</div>
+		<span class="cooking-time__operator">=</span>
+	</div>
+
+	<div class="layout__item layout__item--1-4">
+		<div class="cooking-time__action">
+			<div class="icon icon-bird icon-bird--cooked">
+				{% include icons/smell.svg %}
+				{% include icons/bird.svg %}
+				{% include icons/tray.svg %}
+			</div>
+			<div class="cooking-time__action__description">
+				<p>Leave to rest for 2 hours before eating. Tasty...</p>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	$('#js-bird-weight').change(function(){
+		$iconWidth = $(this).val() * 10;
+		$('.icon-bird').width($iconWidth);
+	});
+
+</script>

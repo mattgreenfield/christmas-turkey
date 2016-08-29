@@ -1,0 +1,10 @@
+<div class="layout__item layout__item--{{ include.width }}">
+	<div class="section">
+		<h2 class="heading">{{ include.heading }}</h2>
+
+		{% capture content %}sections/{{ include.content }}.html{% endcapture %}
+		{% include {{content}} %}
+
+	</div>
+
+</div>

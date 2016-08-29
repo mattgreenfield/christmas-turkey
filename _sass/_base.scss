@@ -1,0 +1,29 @@
+
+body,
+body * {
+	box-sizing: border-box;
+}
+
+
+/**
+ * Basic styling
+ */
+body {
+    font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-family: $base-font-family;
+    color: $text-color;
+    background-color: $background-color;
+    padding: $spacing-unit;
+	margin: 0;
+}
+
+
+/**
+ * Images
+ */
+img,
+svg {
+    max-width: 100%;
+    vertical-align: middle;
+}
