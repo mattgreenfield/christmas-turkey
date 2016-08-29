@@ -15,10 +15,9 @@ $spacing-unit:     30px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
     "base"
-        // "base",
-        // "layout",
-		// "headings",
-		// "icons",
-		// "inputs",
-		// "instructions"
+    ,"layout"
+	// "headings",
+	// "icons",
+	// "inputs",
+	// "instructions"
 ;
