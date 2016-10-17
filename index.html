@@ -2,49 +2,55 @@
 layout: default
 ---
 
+<section class="billboard">
+    <h2 class="heading">How big's your turkey?</h2>
 
-<section>
-    <h2>Preperation</h2>
-    <p>Preheat oven to 180ºC (Gas Mark 4)</p>
-</section>
-
-<section>
-    <h2>Cooking Time</h2>
-
-    <input type="number" id="js-input-kg">KG
+    <input type="number" class="text-input" id="js-input-kg" value="4" min="0.1" step="0.1" autofocus>KG
     <div>
+        <h3>Cook for:</h3>
         <span id="js-cooking-time-minutes"></span> Minutes
         <div>OR</div>
         <span id="js-cooking-time-hours"></span> Hours
         <span id="js-cooking-time-hours-min"></span> Minutes
     </div>
 
-    <h3>Start a timer</h3>
+    <!-- <h3>Start a timer</h3>
     <div id="js-timer-countdown"></div>
-    <button onclick="startTimer()">Start</button>
+    <button onclick="startTimer()">Start</button> -->
 
     <aside>Times are approximate, allow more time for a bird with stuffing inside. Fan-assisted ovens, might cook the bird quicker.</aside>
-    <details>
-        <summary>View the formula</summary>
-        <h3>Under 4.5kg</h3>
-        <p>45 minutes per kg plus 20 minutes</p>
-
-        <h3>between 4.5kg and 6.5kg</h3>
-        <p>40 minutes per kg</p>
-
-        <h3>more than 6.5kg</h3>
-        <p>35 minutes per kg</p>
-    </details>
 </section>
 
-<section>    
-    <h2>When's it ready?</h2>
+<section class="section">
+
+    <h2>Instructions</h2>
+
+    <h3>Preperation</h3>
+    <p>Preheat oven to 180ºC (Gas Mark 4)</p>
+
+    <h3>Times</h3>
+    <p>See above</p>
+
+    <h3>When's it ready?</h3>
     <ul>
         <li>the meat should be steaming hot all the way through</li>
         <li>none of the meat should be pink when you cut into the thickest part of the bird</li>
         <li>the juices should run clear when you pierce the turkey or press the thigh</li>
     </ul>
 </section>
+
+<section class="section">
+    <h2>The formula</h2>
+    <h3>Under 4.5kg</h3>
+    <p>45 minutes per kg plus 20 minutes</p>
+
+    <h3>between 4.5kg and 6.5kg</h3>
+    <p>40 minutes per kg</p>
+
+    <h3>more than 6.5kg</h3>
+    <p>35 minutes per kg</p>
+</section>
+
 
 
 <script>
@@ -57,9 +63,7 @@ layout: default
     var timerCountdown = document.getElementById('js-timer-countdown');
     var countdownMinutes;
 
-    // Update the time fields on change of the KG input
-    weightInput.addEventListener("change", function(){
-        var weight = this.value;
+    function calculateTime( weight ){
         var minutes;
         if ( weight < 4.5 ){
             // 45 minutes per kg plus 20 minutes
@@ -81,6 +85,14 @@ layout: default
         resultMinutes.innerHTML = minutes;
         resultHours.innerHTML = Math.floor( minutes / 60);
         resultHoursMin.innerHTML = minutes % 60;
+    }
+
+    // run on page load
+    calculateTime( weightValue );
+
+    // Update the time fields on change of the KG input
+    weightInput.addEventListener("change", function(){
+        calculateTime( this.value );
     });
 
     // Start a timer on button press

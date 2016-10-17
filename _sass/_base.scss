@@ -6,7 +6,7 @@ body * {
 
 
 /**
- * Basic styling
+ * Base styles
  */
 body {
     font-size: $base-font-size;
@@ -14,8 +14,40 @@ body {
 	font-family: $base-font-family;
     color: $text-color;
     background-color: $background-color;
-    padding: $spacing-unit;
 	margin: 0;
+}
+
+
+// Stylizing it
+body {
+	margin: $spacing-unit;
+	border: 10px solid black;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+
+	&:before {
+		content: "";
+		display: block;
+		position: fixed;
+		top: -15vh;
+		left: 0;
+		transform: skewY(-10deg);
+		height: 50vh;
+		width: 100%;
+		background: #acf3e9;
+	    z-index: -1;
+	}
+}
+
+.page-container {
+
+	padding: $spacing-unit;
+	height: 100%;
+	overflow: auto;
 }
 
 
@@ -29,7 +61,7 @@ svg {
 }
 
 
-section {
+.section {
 
 	border: 1px solid;
 	padding: 1em;

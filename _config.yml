@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Christmas Turkey
+title: Christmas Turkey Cooking Time Calculator
 description: |
   A site all about turkeys.
 baseurl: "" # the subpath of your site, e.g. /blog
